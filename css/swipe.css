@@ -1,0 +1,79 @@
+/*---------------»¬¶¯Ä£¿é--------------*/
+.swipe {
+    max-width:100%;
+    margin:0;
+    padding:0;
+    margin-left:.1rem;
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+.maskForBug{
+    width:100%;
+    min-height: 30rem;
+    position:absolute;
+    top:20rem;
+    left:0;
+    background: rgba(0,0,0,0);
+    z-index:10;
+}
+.swipe-content {
+    overflow:hidden;
+    position: relative;
+}
+.swipe-content > figure {
+    margin:0;
+    padding:0;
+    width:100%;
+    position: relative;
+}
+.swipe-content > figure > p{
+    margin-right:.1rem;
+    margin-left:.1rem;
+    letter-spacing:normal;
+    line-height:normal;
+}
+.swipeBtn{
+    width:5%;
+    height:12%;
+    vertical-align: middle;
+    text-align:center;
+    position:absolute;
+    background:rgba(0,0,0,.8);
+    z-index:10;
+    border:none;
+    color:#fff;
+    max-width:36px;
+    transition :all 1.5s ease;
+    outline:none;
+    font-size:1.8rem;
+}
+button.swipeBtn:focus,button.swipeBtn :hover,button.swipeBtn :active{
+    border:none;
+    box-shadow:none;
+    -webkit-box-shadow:none;
+    outline:none;
+}
+.nextBtn{
+    left:5px;
+    top:40%;
+}
+.prevBtn{
+    right:5px;
+    top:40%;
+}
+.btn-highLight{
+    background:rgba(0,0,0,.8);
+    opacity:1.0;
+}
+.btn-hidden{
+    background:rgba(0,0,0,0);
+    opacity:0;
+}
+.justify{
+    text-align:center;
+}
+.leaderName{
+    font-weight:bold;
+    text-align:center;
+}

@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!--iphone全屏显示-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">
+    <meta http-equiv="Expires" CONTENT="0">
+    <link rel="stylesheet" href="css/base_css3.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        .explain {
+            border:1px solid #dedede;
+            padding:1.0rem;
+            background: #ebfffc;
+            border-radius:10px;
+        }
+        a{
+            word-break: break-all; word-wrap:break-word;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+        .red{
+            color: #ff7e39;
+        }
+    </style>
+</head>
+<body>
+  <h2 class="text-center">关于Lion</h2>
+  <div class="panel explain">
+  <p>
+      &nbsp;&nbsp;<strong>李</strong>小龙在咏春拳的基础上，创新出截拳道，从此中国Kongfu走向世界名满天下……
+  </p>
+  <p>
+      今天，俺在Bootstrap基础上，加上css3布局新特性创立出轻量级移动端前端开发框架---Lion
+      当然仅志立于解决公司移动前端开发部分痛点，此框架由于才刚刚诞生，难免有纰漏疏忽，望各位多批评指正并多提宝贵意见，使之日趋完美~，使之更好服务于公司项目产品
+  </p>
+  </div>
+  <div class="panel explain mt15">
+      一、让我们言归正转~
+      <b>首先，我们在做移动端页面开发之前请务必在</b>
+      <p>"&lt;head&gt;&lt;/head&gt;"标签之内添加：（其中第一项为必设置项）
+      <p>1.&lt;meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"&gt;
+      <br>（该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。也许允不允许用户缩放不同的网站有不同的要求.详情见Lion哥的博客：<a href="http://blog.csdn.net/huang100qi/article/details/45576665">http://blog.csdn.net/huang100qi/article/details/45576665</a>）
+      <p>2.&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+      <br>（该meta标签的作用是iphone全屏显示.详情见Lion哥的博客：<a href="http://blog.csdn.net/huang100qi/article/details/50161127">http://blog.csdn.net/huang100qi/article/details/50161127</a>）<!--iphone全屏显示-->
+      <p>3.&lt;meta name="apple-mobile-web-app-status-bar-style" content="black"&gt;
+      <br>（该meta标签的作用是在Iphone应用下状态条（屏幕顶部条）的颜色）
+      <p>4.&lt;meta http-equiv="Pragma" CONTENT="no-cache"&gt;
+      <br>（该meta标签的作用是清缓存）
+      <p>5.&lt;meta http-equiv="Cache-Control" CONTENT="no-cache"&gt;
+      <br>(该meta标签的作用是清缓存）
+      <p>6.&lt;meta http-equiv="Expires" CONTENT="0"&gt;
+      <br>(该meta标签的作用是清缓存设置过期时间）
+  </div>
+  <div class="panel explain mt15">除此之外，由于手机屏幕大小、分辨率可谓千差万别，如何能让我们开发的页面在这些移动终端设备准确无误的跑，的确挺考验我们前端开发者的功力的。
+      为了能更好地适配手机端，我们通常是屏弃PC端以px(像素)为而局单位。那么，我们需要借助百分比而局及如rem(相对根元素)定义页面元素大小方式布局
+      <br>因此，在lion框架中，我们已经在HTML根元素换算好 font-size: 62.5%;  /* 10 ÷ 16 × 100% = 62.5% */,因此，我们仍然可以延用pc开发定义页面元素大小方式布局习惯
+      <br>如：想要在移动端显示如pc端14像素字体大小，我们只需定义该字体大小为1.4rem即可。
+      <p>了解详情请移步：<a href="http://blog.csdn.net/huang100qi/article/details/49886713">http://blog.csdn.net/huang100qi/article/details/49886713</a>
+  </div>
+  <h4 class="panel mt15 mb15">二、为了手机端页面每个模块两端能有留白，我们加上class="panel"即可</h4>
+  <div class="panel explain">
+
+      <p>&nbsp;</p>
+      这是一个有两端留白盒子
+      <p>&nbsp;</p>
+
+  </div>
+  <div class="panel explain mt15">
+      三、讲到这里，有同学会问了，在手机上我想要并排一组图片，且支持自适应。好难啊~~有木有啊，你的这个Lion框架能帮我解决吗？
+      <p class="red">答案是肯定的。而且不会像Bootsrap那样麻烦，且不需要在HTML代码嵌套多层DIV，非常清磢
+      只需要如下设置即可
+      <p>
+      &lt;ul class="row mt15"&gt;
+      <br>
+      &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+      &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+      &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+      &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+      &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+      &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+
+      &lt;/ul&gt;
+  </div>
+      <ul class="row mt15">
+          <li class="span4"><img src="images/image-1.jpg"></li>
+          <li class="span4"><img src="images/image-1.jpg"></li>
+          <li class="span4"><img src="images/image-1.jpg"></li>
+          <li class="span4"><img src="images/image-1.jpg"></li>
+          <li class="span4"><img src="images/image-1.jpg"></li>
+          <li class="span4"><img src="images/image-1.jpg"></li>
+      </ul>
+
+  <div class="panel explain mt15">
+      四、那我不需要中间留白，咋整？
+      <p class="red">答：加上"no-margin"即可，其中mt15是全局margin值，可随意
+      <p>
+          &lt;ul class="row no-margin mt15"&gt;
+          <br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+
+          &lt;/ul&gt;
+  </div>
+
+          <ul class="row no-margin mt15">
+              <li class="span4"><img src="images/image-1.jpg"></li>
+              <li class="span4"><img src="images/image-1.jpg"></li>
+              <li class="span4"><img src="images/image-1.jpg"></li>
+              <li class="span4"><img src="images/image-1.jpg"></li>
+              <li class="span4"><img src="images/image-1.jpg"></li>
+              <li class="span4"><img src="images/image-1.jpg"></li>
+          </ul>
+  <div class="panel explain mt15">
+      五、我需要一张大图，然后再跟张小图，或者是图片大小布局不一致！小图里面还需要有文字咋整？
+      <p class="red">答：只需要改变span值即可其中mt15是全局margin值，可随意
+      <p>
+          &lt;ul class="row no-margin mt15"&gt;
+          <br>
+          &lt;li class="span6"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span3"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;这里是文字……&lt;/li&gt;<br>
+
+          &lt;/ul&gt;
+  </div>
+  <ul class="row mt15">
+      <li class="span6"><img src="images/image-1.jpg"></li>
+      <li class="span3"><img src="images/image-1.jpg">
+       <ul>
+           <li>文字…</li>
+           <li>文字…</li>
+       </ul>
+      </li>
+      <li class="span4">文字…</li>
+  </ul>
+
+  <div class="panel explain mt15">
+      五、我现在有个父层，里面有子层，需要让所有子层水平方向绝对居中，怎么玩？
+      <p class="red">答：只需要在父层加上horizonMiddle这个className即可其中mt15是全局margin值，可随意
+      <p>
+  </div>
+  <div class="panel explain mt15">
+      <div class='row horizonMiddle'>
+         <div style="width:6.0rem;border:1px solid #ccc;height:2.8rem;background:#fff;margin-right:1px;">子层1</div>
+         <div style="width:7.0rem;border:1px solid #ccc;height:4.8rem;background:#fff;margin-right:1px;">子层2</div>
+          <div style="width:7.0rem;border:1px solid #ccc;height:3.8rem;background:#fff;">子层3</div>
+      </div>
+  </div>
+
+  <div class="panel explain mt15">
+      六、我现在有个父层，里面有子层，需要让所有子层竖直方向绝对居中，怎么玩？
+      <p class="red">答：只需要在父层加上verMiddle这个className即可其中mt15是全局margin值，可随意
+      <p>
+  </div>
+  <div class="panel explain mt15">
+      <div class='row verMiddle'>
+          <div style="width:6.0rem;border:1px solid #ccc;height:2.8rem;background:#fff;margin-bottom:1px;">子层1</div>
+          <div style="width:7.0rem;border:1px solid #ccc;height:4.8rem;background:#fff;margin-bottom:1px;">子层2</div>
+          <div style="width:6.0rem;border:1px solid #ccc;height:3.8rem;background:#fff;margin-bottom:1px;">子层3</div>
+      </div>
+  </div>
+
+  <div class="panel explain mt15">
+      七、那个啥，我这些li是后台拿的，指不定有多少行呢？咋弄啊？
+      <p class="red">答：你只需把row改成row-fluid即可
+      <p>
+          &lt;ul class="row-fluid mt15"&gt;
+          <br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+          &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+
+          &lt;/ul&gt;
+  </div>
+
+  <ul class="row-fluid mt15">
+      <li class="span3"><img src="images/image-1.jpg"></li>
+      <li class="span3"><img src="images/image-1.jpg"></li>
+      <li class="span3"><img src="images/image-1.jpg"></li>
+      <li class="span3"><img src="images/image-1.jpg"></li>
+      <li class="span4"><img src="images/image-1.jpg"></li>
+      <li class="span4"><img src="images/image-1.jpg"></li>
+      <li class="span4"><img src="images/image-1.jpg"></li>
+      <li class="span4"><img src="images/image-1.jpg"></li>
+  </ul>
+
+<div class="panel explain mt15">
+    八、那个啥，就上面的那个，不想要空白
+    <p class="red">答：把no-margin加上即可
+    <p>
+        &lt;ul class="row-fluid no-margin mt15"&gt;
+        <br>
+        &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+        &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+        &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+        &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+        &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+        &lt;li class="span4"&gt;&lt;img src="images/image-1.jpg"&gt;&lt;/li&gt;<br>
+
+        &lt;/ul&gt;
+</div>
+
+<ul class="row-fluid mt15 no-margin">
+    <li class="span3"><img src="images/image-1.jpg"></li>
+    <li class="span3"><img src="images/image-1.jpg"></li>
+    <li class="span3"><img src="images/image-1.jpg"></li>
+    <li class="span3"><img src="images/image-1.jpg"></li>
+    <li class="span4"><img src="images/image-1.jpg"></li>
+    <li class="span4"><img src="images/image-1.jpg"></li>
+    <li class="span4"><img src="images/image-1.jpg"></li>
+    <li class="span4"><img src="images/image-1.jpg"></li>
+</ul>
+
+  <div class="panel explain mt15">
+     九、 仅单行布局：
+      <div class="row">
+          <div class="explain span12">
+              span12
+          </div>          
+      </div>
+      <div class="row mt5">
+          <div class="explain span11">
+              span11
+          </div>
+          <div class="explain span1">
+             1
+          </div>         
+      </div>
+      <div class="row mt5">
+          <div class="explain span10">
+              span10
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+      </div>
+      <div class="row mt5">
+          <div class="explain span9">
+              span9
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+      </div>
+      <div class="row mt5">
+          <div class="explain span8">
+              span8
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+      </div>
+      <div class="row mt5">
+          <div class="explain span7">
+              span7
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+      </div>
+      <div class="row mt5">
+          <div class="explain span6">
+              span6
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+         
+      </div>
+      <div class="row mt5">
+          <div class="explain span5">
+              span5
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          
+      </div>
+      <div class="row mt5">
+          <div class="explain span4">
+              span4
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+      </div>
+      <div class="row mt5">
+          <div class="explain span3">
+              span3
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+      </div>
+      <div class="row mt5">
+          <div class="explain span2">
+              span2
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+      </div>
+      <div class="row mt5">
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+             1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+          
+      </div>
+
+  </div>
+  <div class="panel explain mt15">
+      十、单选或多行布局：
+      <div class="row-fluid">
+          <div class="explain span12">
+              span12
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="explain span11">
+              span11
+          </div>
+          <div class="explain span1">
+              1
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="explain span10">
+              span10
+          </div>
+          <div class="explain span2">
+              2
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="explain span9">
+              span9
+          </div>
+          <div class="explain span3">
+              3
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="explain span8">
+              span8
+          </div>
+          <div class="explain span4">
+              4
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="explain span7">
+              span7
+          </div>
+          <div class="explain span5">
+              5
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="explain span6">
+              span6
+          </div>
+          <div class="explain span6">
+              6
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="explain span1">
+              1
+          </div>
+          <div class="explain span2">
+             2
+          </div>
+          <div class="explain span3">
+              3
+          </div>
+          <div class="explain span4">
+              4
+          </div>
+          <div class="explain span2">
+              2
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="offsetL explain span6">
+              offsetL
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="offset1 explain span6">
+              offset1
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="offset2 explain span6">
+              offset2
+          </div>
+      </div>
+      <div class="row-fluid">
+          <div class="offset3 explain span6">
+              offset3
+          </div>
+          <div class="row-fluid">
+              <div class="offset4 explain span6">
+                  offset4
+              </div>
+          </div>
+          <div class="row-fluid">
+              <div class="offset5 explain span6">
+                  offset5
+              </div>
+          </div>
+          <div class="row-fluid">
+              <div class="offset6 explain span6">
+                  offset6
+              </div>
+          </div>
+          <div class="row-fluid">
+              <div class="offset6 explain span6">
+                 ....
+              </div>
+          </div>
+          <div class="row-fluid">
+              <div class="explain span6">
+                  span6
+              </div>
+             <div class="explain offset1 span2">
+              2
+              </div>
+              <div class="explain  span3">
+                 3
+              </div>
+          </div>
+          <div class="row-fluid">
+              <div class="explain span5">
+                  span6
+              </div>
+              <div class="explain offsetR span3">
+                  offsetR
+              </div>
+              <div class="explain  span3">
+                  3
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <h3 class="mt15 mb15 text-center">十一、按钮</h3>
+  <div class="panel explain">
+      <div class="row">
+      <div class="span6">
+          <p> <button class="btn btn-primary">btn-primary</button></p>
+          <p> <button class="btn btn-warning">btn-warning</button></p>
+          <p> <button class="btn btn-success">btn-success</button></p>
+          <p> <button class="btn btn-danger">btn-danger</button></p>
+       </div>
+         <div class="span6">
+             <p> <button class="btn">btn</button>&nbsp;<button class="btn disabled">disabled</button></p>
+             <p><button class="btn btn-link">btn-link</button></p>
+             <p> <button class="btn btn-default">btn-default</button></p>
+             <p> <button class="btn btn-info">btn-info</button></p>
+         </div>
+     </div>
+      <small>方向箭头只需要调用arrow-up、arrow-down、arrow-left、arrow-right</small>
+     <div class="row">
+         <p><a class="arrow-up"></a>&nbsp;
+         <p><a class="arrow-down"></a>&nbsp;
+         <p><a class="arrow-left"></a>&nbsp;
+         <p><a class="arrow-right"></a>
+     </div>
+     </div>
+
+  <h3 class="mt15 mb15 text-center">十一、小图标</h3>
+   <div class="panel explain">如果需要加入小图标
+       <p class="red">答：只需要引入font-awesome.min.css文件到文档就可
+       即在头部加入： &lt;link rel="stylesheet" href="css/font-awesome.min.css"&gt;
+       当然了，一定要确保框架中的font包与css文件夹在同一目录下
+       <div class="row-fluid">
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-cloud-download"></i> icon-cloud-download</li>
+                   <li><i class="icon-cloud-upload"></i> icon-cloud-upload</li>
+                   <li><i class="icon-lightbulb"></i> icon-lightbulb</li>
+                   <li><i class="icon-exchange"></i> icon-exchange</li>
+                   <li><i class="icon-bell-alt"></i> icon-bell-alt</li>
+                   <li><i class="icon-file-alt"></i> icon-file-alt</li>
+                   <li><i class="icon-beer"></i> icon-beer</li>
+                   <li><i class="icon-coffee"></i> icon-coffee</li>
+                   <li><i class="icon-food"></i> icon-food</li>
+                   <li><i class="icon-fighter-jet"></i> icon-fighter-jet</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-user-md"></i> icon-user-md</li>
+                   <li><i class="icon-stethoscope"></i> icon-stethoscope</li>
+                   <li><i class="icon-suitcase"></i> icon-suitcase</li>
+                   <li><i class="icon-building"></i> icon-building</li>
+                   <li><i class="icon-hospital"></i> icon-hospital</li>
+                   <li><i class="icon-ambulance"></i> icon-ambulance</li>
+                   <li><i class="icon-medkit"></i> icon-medkit</li>
+                   <li><i class="icon-h-sign"></i> icon-h-sign</li>
+                   <li><i class="icon-plus-sign-alt"></i> icon-plus-sign-alt</li>
+                   <li><i class="icon-spinner"></i> icon-spinner</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-angle-left"></i> icon-angle-left</li>
+                   <li><i class="icon-angle-right"></i> icon-angle-right</li>
+                   <li><i class="icon-angle-up"></i> icon-angle-up</li>
+                   <li><i class="icon-angle-down"></i> icon-angle-down</li>
+                   <li><i class="icon-double-angle-left"></i> icon-double-angle-left</li>
+                   <li><i class="icon-double-angle-right"></i> icon-double-angle-right</li>
+                   <li><i class="icon-double-angle-up"></i> icon-double-angle-up</li>
+                   <li><i class="icon-double-angle-down"></i> icon-double-angle-down</li>
+                   <li><i class="icon-circle-blank"></i> icon-circle-blank</li>
+                   <li><i class="icon-circle"></i> icon-circle</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-desktop"></i> icon-desktop</li>
+                   <li><i class="icon-laptop"></i> icon-laptop</li>
+                   <li><i class="icon-tablet"></i> icon-tablet</li>
+                   <li><i class="icon-mobile-phone"></i> icon-mobile-phone</li>
+                   <li><i class="icon-quote-left"></i> icon-quote-left</li>
+                   <li><i class="icon-quote-right"></i> icon-quote-right</li>
+                   <li><i class="icon-reply"></i> icon-reply</li>
+                   <li><i class="icon-github-alt"></i> icon-github-alt</li>
+                   <li><i class="icon-folder-close-alt"></i> icon-folder-close-alt</li>
+                   <li><i class="icon-folder-open-alt"></i> icon-folder-open-alt</li>
+               </ul>
+           </div>
+       </div>
+       <div class="row-fluid">
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-adjust"></i> icon-adjust</li>
+                   <li><i class="icon-asterisk"></i> icon-asterisk</li>
+                   <li><i class="icon-ban-circle"></i> icon-ban-circle</li>
+                   <li><i class="icon-bar-chart"></i> icon-bar-chart</li>
+                   <li><i class="icon-barcode"></i> icon-barcode</li>
+                   <li><i class="icon-beaker"></i> icon-beaker</li>
+                   <li><i class="icon-beer"></i> icon-beer</li>
+                   <li><i class="icon-bell"></i> icon-bell</li>
+                   <li><i class="icon-bell-alt"></i> icon-bell-alt</li>
+                   <li><i class="icon-bolt"></i> icon-bolt</li>
+                   <li><i class="icon-book"></i> icon-book</li>
+                   <li><i class="icon-bookmark"></i> icon-bookmark</li>
+                   <li><i class="icon-bookmark-empty"></i> icon-bookmark-empty</li>
+                   <li><i class="icon-briefcase"></i> icon-briefcase</li>
+                   <li><i class="icon-bullhorn"></i> icon-bullhorn</li>
+                   <li><i class="icon-calendar"></i> icon-calendar</li>
+                   <li><i class="icon-camera"></i> icon-camera</li>
+                   <li><i class="icon-camera-retro"></i> icon-camera-retro</li>
+                   <li><i class="icon-certificate"></i> icon-certificate</li>
+                   <li><i class="icon-check"></i> icon-check</li>
+                   <li><i class="icon-check-empty"></i> icon-check-empty</li>
+                   <li><i class="icon-circle"></i> icon-circle</li>
+                   <li><i class="icon-circle-blank"></i> icon-circle-blank</li>
+                   <li><i class="icon-cloud"></i> icon-cloud</li>
+                   <li><i class="icon-cloud-download"></i> icon-cloud-download</li>
+                   <li><i class="icon-cloud-upload"></i> icon-cloud-upload</li>
+                   <li><i class="icon-coffee"></i> icon-coffee</li>
+                   <li><i class="icon-cog"></i> icon-cog</li>
+                   <li><i class="icon-cogs"></i> icon-cogs</li>
+                   <li><i class="icon-comment"></i> icon-comment</li>
+                   <li><i class="icon-comment-alt"></i> icon-comment-alt</li>
+                   <li><i class="icon-comments"></i> icon-comments</li>
+                   <li><i class="icon-comments-alt"></i> icon-comments-alt</li>
+                   <li><i class="icon-credit-card"></i> icon-credit-card</li>
+                   <li><i class="icon-dashboard"></i> icon-dashboard</li>
+                   <li><i class="icon-desktop"></i> icon-desktop</li>
+                   <li><i class="icon-download"></i> icon-download</li>
+                   <li><i class="icon-download-alt"></i> icon-download-alt</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-edit"></i> icon-edit</li>
+                   <li><i class="icon-envelope"></i> icon-envelope</li>
+                   <li><i class="icon-envelope-alt"></i> icon-envelope-alt</li>
+                   <li><i class="icon-exchange"></i> icon-exchange</li>
+                   <li><i class="icon-exclamation-sign"></i> icon-exclamation-sign</li>
+                   <li><i class="icon-external-link"></i> icon-external-link</li>
+                   <li><i class="icon-eye-close"></i> icon-eye-close</li>
+                   <li><i class="icon-eye-open"></i> icon-eye-open</li>
+                   <li><i class="icon-facetime-video"></i> icon-facetime-video</li>
+                   <li><i class="icon-fighter-jet"></i> icon-fighter-jet</li>
+                   <li><i class="icon-film"></i> icon-film</li>
+                   <li><i class="icon-filter"></i> icon-filter</li>
+                   <li><i class="icon-fire"></i> icon-fire</li>
+                   <li><i class="icon-flag"></i> icon-flag</li>
+                   <li><i class="icon-folder-close"></i> icon-folder-close</li>
+                   <li><i class="icon-folder-open"></i> icon-folder-open</li>
+                   <li><i class="icon-folder-close-alt"></i> icon-folder-close-alt</li>
+                   <li><i class="icon-folder-open-alt"></i> icon-folder-open-alt</li>
+                   <li><i class="icon-food"></i> icon-food</li>
+                   <li><i class="icon-gift"></i> icon-gift</li>
+                   <li><i class="icon-glass"></i> icon-glass</li>
+                   <li><i class="icon-globe"></i> icon-globe</li>
+                   <li><i class="icon-group"></i> icon-group</li>
+                   <li><i class="icon-hdd"></i> icon-hdd</li>
+                   <li><i class="icon-headphones"></i> icon-headphones</li>
+                   <li><i class="icon-heart"></i> icon-heart</li>
+                   <li><i class="icon-heart-empty"></i> icon-heart-empty</li>
+                   <li><i class="icon-home"></i> icon-home</li>
+                   <li><i class="icon-inbox"></i> icon-inbox</li>
+                   <li><i class="icon-info-sign"></i> icon-info-sign</li>
+                   <li><i class="icon-key"></i> icon-key</li>
+                   <li><i class="icon-leaf"></i> icon-leaf</li>
+                   <li><i class="icon-laptop"></i> icon-laptop</li>
+                   <li><i class="icon-legal"></i> icon-legal</li>
+                   <li><i class="icon-lemon"></i> icon-lemon</li>
+                   <li><i class="icon-lightbulb"></i> icon-lightbulb</li>
+                   <li><i class="icon-lock"></i> icon-lock</li>
+                   <li><i class="icon-unlock"></i> icon-unlock</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-magic"></i> icon-magic</li>
+                   <li><i class="icon-magnet"></i> icon-magnet</li>
+                   <li><i class="icon-map-marker"></i> icon-map-marker</li>
+                   <li><i class="icon-minus"></i> icon-minus</li>
+                   <li><i class="icon-minus-sign"></i> icon-minus-sign</li>
+                   <li><i class="icon-mobile-phone"></i> icon-mobile-phone</li>
+                   <li><i class="icon-money"></i> icon-money</li>
+                   <li><i class="icon-move"></i> icon-move</li>
+                   <li><i class="icon-music"></i> icon-music</li>
+                   <li><i class="icon-off"></i> icon-off</li>
+                   <li><i class="icon-ok"></i> icon-ok</li>
+                   <li><i class="icon-ok-circle"></i> icon-ok-circle</li>
+                   <li><i class="icon-ok-sign"></i> icon-ok-sign</li>
+                   <li><i class="icon-pencil"></i> icon-pencil</li>
+                   <li><i class="icon-picture"></i> icon-picture</li>
+                   <li><i class="icon-plane"></i> icon-plane</li>
+                   <li><i class="icon-plus"></i> icon-plus</li>
+                   <li><i class="icon-plus-sign"></i> icon-plus-sign</li>
+                   <li><i class="icon-print"></i> icon-print</li>
+                   <li><i class="icon-pushpin"></i> icon-pushpin</li>
+                   <li><i class="icon-qrcode"></i> icon-qrcode</li>
+                   <li><i class="icon-question-sign"></i> icon-question-sign</li>
+                   <li><i class="icon-quote-left"></i> icon-quote-left</li>
+                   <li><i class="icon-quote-right"></i> icon-quote-right</li>
+                   <li><i class="icon-random"></i> icon-random</li>
+                   <li><i class="icon-refresh"></i> icon-refresh</li>
+                   <li><i class="icon-remove"></i> icon-remove</li>
+                   <li><i class="icon-remove-circle"></i> icon-remove-circle</li>
+                   <li><i class="icon-remove-sign"></i> icon-remove-sign</li>
+                   <li><i class="icon-reorder"></i> icon-reorder</li>
+                   <li><i class="icon-reply"></i> icon-reply</li>
+                   <li><i class="icon-resize-horizontal"></i> icon-resize-horizontal</li>
+                   <li><i class="icon-resize-vertical"></i> icon-resize-vertical</li>
+                   <li><i class="icon-retweet"></i> icon-retweet</li>
+                   <li><i class="icon-road"></i> icon-road</li>
+                   <li><i class="icon-rss"></i> icon-rss</li>
+                   <li><i class="icon-screenshot"></i> icon-screenshot</li>
+                   <li><i class="icon-search"></i> icon-search</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-share"></i> icon-share</li>
+                   <li><i class="icon-share-alt"></i> icon-share-alt</li>
+                   <li><i class="icon-shopping-cart"></i> icon-shopping-cart</li>
+                   <li><i class="icon-signal"></i> icon-signal</li>
+                   <li><i class="icon-signin"></i> icon-signin</li>
+                   <li><i class="icon-signout"></i> icon-signout</li>
+                   <li><i class="icon-sitemap"></i> icon-sitemap</li>
+                   <li><i class="icon-sort"></i> icon-sort</li>
+                   <li><i class="icon-sort-down"></i> icon-sort-down</li>
+                   <li><i class="icon-sort-up"></i> icon-sort-up</li>
+                   <li><i class="icon-spinner"></i> icon-spinner</li>
+                   <li><i class="icon-star"></i> icon-star</li>
+                   <li><i class="icon-star-empty"></i> icon-star-empty</li>
+                   <li><i class="icon-star-half"></i> icon-star-half</li>
+                   <li><i class="icon-tablet"></i> icon-tablet</li>
+                   <li><i class="icon-tag"></i> icon-tag</li>
+                   <li><i class="icon-tags"></i> icon-tags</li>
+                   <li><i class="icon-tasks"></i> icon-tasks</li>
+                   <li><i class="icon-thumbs-down"></i> icon-thumbs-down</li>
+                   <li><i class="icon-thumbs-up"></i> icon-thumbs-up</li>
+                   <li><i class="icon-time"></i> icon-time</li>
+                   <li><i class="icon-tint"></i> icon-tint</li>
+                   <li><i class="icon-trash"></i> icon-trash</li>
+                   <li><i class="icon-trophy"></i> icon-trophy</li>
+                   <li><i class="icon-truck"></i> icon-truck</li>
+                   <li><i class="icon-umbrella"></i> icon-umbrella</li>
+                   <li><i class="icon-upload"></i> icon-upload</li>
+                   <li><i class="icon-upload-alt"></i> icon-upload-alt</li>
+                   <li><i class="icon-user"></i> icon-user</li>
+                   <li><i class="icon-user-md"></i> icon-user-md</li>
+                   <li><i class="icon-volume-off"></i> icon-volume-off</li>
+                   <li><i class="icon-volume-down"></i> icon-volume-down</li>
+                   <li><i class="icon-volume-up"></i> icon-volume-up</li>
+                   <li><i class="icon-warning-sign"></i> icon-warning-sign</li>
+                   <li><i class="icon-wrench"></i> icon-wrench</li>
+                   <li><i class="icon-zoom-in"></i> icon-zoom-in</li>
+                   <li><i class="icon-zoom-out"></i> icon-zoom-out</li>
+               </ul>
+           </div>
+
+       </div>
+       <div class="row-fluid">
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-file"></i> icon-file</li>
+                   <li><i class="icon-file-alt"></i> icon-file-alt</li>
+                   <li><i class="icon-cut"></i> icon-cut</li>
+                   <li><i class="icon-copy"></i> icon-copy</li>
+                   <li><i class="icon-paste"></i> icon-paste</li>
+                   <li><i class="icon-save"></i> icon-save</li>
+                   <li><i class="icon-undo"></i> icon-undo</li>
+                   <li><i class="icon-repeat"></i> icon-repeat</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-text-height"></i> icon-text-height</li>
+                   <li><i class="icon-text-width"></i> icon-text-width</li>
+                   <li><i class="icon-align-left"></i> icon-align-left</li>
+                   <li><i class="icon-align-center"></i> icon-align-center</li>
+                   <li><i class="icon-align-right"></i> icon-align-right</li>
+                   <li><i class="icon-align-justify"></i> icon-align-justify</li>
+                   <li><i class="icon-indent-left"></i> icon-indent-left</li>
+                   <li><i class="icon-indent-right"></i> icon-indent-right</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-font"></i> icon-font</li>
+                   <li><i class="icon-bold"></i> icon-bold</li>
+                   <li><i class="icon-italic"></i> icon-italic</li>
+                   <li><i class="icon-strikethrough"></i> icon-strikethrough</li>
+                   <li><i class="icon-underline"></i> icon-underline</li>
+                   <li><i class="icon-link"></i> icon-link</li>
+                   <li><i class="icon-paper-clip"></i> icon-paper-clip</li>
+                   <li><i class="icon-columns"></i> icon-columns</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-table"></i> icon-table</li>
+                   <li><i class="icon-th-large"></i> icon-th-large</li>
+                   <li><i class="icon-th"></i> icon-th</li>
+                   <li><i class="icon-th-list"></i> icon-th-list</li>
+                   <li><i class="icon-list"></i> icon-list</li>
+                   <li><i class="icon-list-ol"></i> icon-list-ol</li>
+                   <li><i class="icon-list-ul"></i> icon-list-ul</li>
+                   <li><i class="icon-list-alt"></i> icon-list-alt</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-angle-left"></i> icon-angle-left</li>
+                   <li><i class="icon-angle-right"></i> icon-angle-right</li>
+                   <li><i class="icon-angle-up"></i> icon-angle-up</li>
+                   <li><i class="icon-angle-down"></i> icon-angle-down</li>
+                   <li><i class="icon-arrow-down"></i> icon-arrow-down</li>
+                   <li><i class="icon-arrow-left"></i> icon-arrow-left</li>
+                   <li><i class="icon-arrow-right"></i> icon-arrow-right</li>
+                   <li><i class="icon-arrow-up"></i> icon-arrow-up</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-caret-down"></i> icon-caret-down</li>
+                   <li><i class="icon-caret-left"></i> icon-caret-left</li>
+                   <li><i class="icon-caret-right"></i> icon-caret-right</li>
+                   <li><i class="icon-caret-up"></i> icon-caret-up</li>
+                   <li><i class="icon-chevron-down"></i> icon-chevron-down</li>
+                   <li><i class="icon-chevron-left"></i> icon-chevron-left</li>
+                   <li><i class="icon-chevron-right"></i> icon-chevron-right</li>
+                   <li><i class="icon-chevron-up"></i> icon-chevron-up</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-circle-arrow-down"></i> icon-circle-arrow-down</li>
+                   <li><i class="icon-circle-arrow-left"></i> icon-circle-arrow-left</li>
+                   <li><i class="icon-circle-arrow-right"></i> icon-circle-arrow-right</li>
+                   <li><i class="icon-circle-arrow-up"></i> icon-circle-arrow-up</li>
+                   <li><i class="icon-double-angle-left"></i> icon-double-angle-left</li>
+                   <li><i class="icon-double-angle-right"></i> icon-double-angle-right</li>
+                   <li><i class="icon-double-angle-up"></i> icon-double-angle-up</li>
+                   <li><i class="icon-double-angle-down"></i> icon-double-angle-down</li>
+               </ul>
+           </div>
+           <div class="span6">
+               <ul class="the-icons">
+                   <li><i class="icon-hand-down"></i> icon-hand-down</li>
+                   <li><i class="icon-hand-left"></i> icon-hand-left</li>
+                   <li><i class="icon-hand-right"></i> icon-hand-right</li>
+                   <li><i class="icon-hand-up"></i> icon-hand-up</li>
+                   <li><i class="icon-circle"></i> icon-circle</li>
+                   <li><i class="icon-circle-blank"></i> icon-circle-blank</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
